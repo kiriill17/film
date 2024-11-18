@@ -24,7 +24,7 @@ export default function Home() {
             autoPlay
             loop
             muted
-            src={require('../public/film.mp4')}
+            src={require('../public/filmm.mp4')}
           />
         </div>
         <div className="absolute w-full h-full flex flex-col px-16 justify-center top-0 left-0">
@@ -41,7 +41,7 @@ export default function Home() {
         </div>
       </div>
       {/* films */}
-      <div className="px-16 mb-4">
+      <div className="px-16 mb-4 w-full">
         <h1 className="text-2xl font-semibold mb-4 mt-10">Фильмы</h1>
         <Carousel
           opts={{
@@ -51,12 +51,12 @@ export default function Home() {
         >
           <CarouselContent>
             {Array.from({ length: 9 }).map((_, index) => (
-              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/5">
+              <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/5">
                 <div className="p-1 border-2 rounded-xl">
                   <img
                     src="https://cdn.ananasposter.ru/image/cache/catalog/poster/film/87/6240-1000x830.jpg"
                     alt="#"
-                    className="rounded"
+                    className="rounded h-60 object-cover"
                     width={'100%'}
                   />
                   <h1 className="w-fit text-center mt-2 ">Бойцовский клуб</h1>
@@ -80,6 +80,38 @@ export default function Home() {
       {/* serials */}
       <div className="px-16 mb-4">
         <h1 className="text-2xl font-semibold mb-4 mt-10">Сериалы</h1>
+        <Carousel>
+          <CarouselContent>
+            {Array.from({ length: 9 }).map((_, index) => (
+              <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/5">
+                <div className="p-1 border-2 rounded-xl">
+                  <img
+                    src="https://www.kino-teatr.ru/movie/posters/big/4/173334.jpg"
+                    alt="#"
+                    className="rounded h-60 object-cover"
+                    width={'100%'}
+                  />
+                  <h1 className="w-fit text-center mt-2 ">Триггер</h1>
+
+                  <p className="font-light text-sm">2024</p>
+                  <p className="font-light text-sm">imdb: 8.2</p>
+                  <div className="flex justify-between items-center mt-2 mb-1">
+                    <Button className="p-1 h-8 bg-black text-white border-2">Смотреть</Button>
+                    <a href="">
+                      <Heart strokeWidth={1.25} width={20} />
+                    </a>
+                  </div>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
+      </div>
+      {/* cartoons */}
+      <div className="px-16 mb-4">
+        <h1 className="text-2xl font-semibold mb-4 mt-10">Мультфильмы</h1>
         <Carousel
           opts={{
             align: 'start',
@@ -88,18 +120,18 @@ export default function Home() {
         >
           <CarouselContent>
             {Array.from({ length: 9 }).map((_, index) => (
-              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/5">
+              <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/5">
                 <div className="p-1 border-2 rounded-xl">
                   <img
-                    src="https://www.kino-teatr.ru/movie/posters/big/4/173334.jpg"
+                    src="https://upload.wikimedia.org/wikipedia/ru/thumb/1/19/%D0%9C%D0%BE%D0%B0%D0%BD%D0%B0_2.jpg/640px-%D0%9C%D0%BE%D0%B0%D0%BD%D0%B0_2.jpg"
                     alt="#"
-                    className="rounded"
+                    className="rounded h-60 object-cover"
                     width={'100%'}
                   />
-                  <h1 className="w-fit text-center mt-2 ">Триггер</h1>
+                  <h1 className="text-center mt-2 ">Моана 2</h1>
 
                   <p className="font-light text-sm">2024</p>
-                  <p className="font-light text-sm">imdb: 8.2</p>
+                  <p className="font-light text-sm">imdb: 8.1</p>
                   <div className="flex justify-between items-center mt-2 mb-1">
                     <Button className="p-1 h-8 bg-black text-white border-2">Смотреть</Button>
                     <a href="">
