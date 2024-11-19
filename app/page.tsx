@@ -43,14 +43,16 @@ export default function Home() {
         <div className="absolute w-full h-full flex flex-col px-16 justify-center top-0 left-0">
           <h1 className="text-4xl font-semibold text-center sm:text-left">Zetflix</h1>
           <p className="text-sm sm:w-1/2 font-light mt-2 w-full text-center sm:text-left">
-            Нормальные нахуй фильмы, а не вот эти там ваши муси пуси пендоcские
+            Сервис для просмотра фильмов бесплатно от Кирилла
           </p>
-          <Button
-            variant="default"
-            className="mx-auto sm:mx-0 text-white font-semibold bg-amber-700 mt-4 w-32 transition hover:bg-amber-600"
-          >
-            Смотреть
-          </Button>
+          <a href="#main">
+            <Button
+              variant="default"
+              className="mx-auto sm:mx-0 mx-auto mx-0 text-white font-semibold bg-amber-700 mt-4 w-32 transition hover:bg-amber-600"
+            >
+              Смотреть
+            </Button>
+          </a>
         </div>
       </div>
 
@@ -63,7 +65,7 @@ export default function Home() {
           }}
           className="w-full "
         >
-          <CarouselContent>
+          <CarouselContent id="main">
             {!arrFilms.length ? (
               <>
                 {Array.from({ length: 5 }).map((_, index) => (
@@ -85,7 +87,7 @@ export default function Home() {
                       />
                       <h1 className="mt-2 ">{obj.name}</h1>
 
-                      <p className="font-light text-sm">2024</p>
+                      <p className="font-light text-sm">{obj.year}</p>
                       <p className="font-light text-sm">imdb: {obj.imdb}</p>
                       <div className="flex justify-between items-center mt-2 mb-1">
                         <a href={`/film/${obj.id}`}>

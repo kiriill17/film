@@ -1,17 +1,6 @@
 'use client';
 
-import {
-  Calendar,
-  Drum,
-  Film,
-  Home,
-  Inbox,
-  LogOut,
-  Popcorn,
-  Search,
-  Settings,
-  Volleyball,
-} from 'lucide-react';
+import { Drum, Film, LogOut, Popcorn, Volleyball } from 'lucide-react';
 
 import {
   Sidebar,
@@ -24,8 +13,6 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-  SidebarMenuSub,
-  SidebarMenuSubItem,
 } from '@/components/ui/sidebar';
 import { Button } from './ui/button';
 import { useSession, signOut, signIn } from 'next-auth/react';
@@ -65,7 +52,7 @@ export function AppSidebar() {
         <a href="/">
           <div className="px-2 py-2">
             <h1 className="text-lg font-semibold">Zetflix</h1>
-            <p className="text-xs font-light">Фильмы баз пендосов</p>
+            <p className="text-xs font-light">Киносайт от Кирилла</p>
           </div>
         </a>
       </SidebarHeader>

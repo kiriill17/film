@@ -9,14 +9,14 @@ export default async function Film({ params }: { params: { id: string } }) {
   }
 
   return (
-    <div className="px-10 max-w-screen-xl mx-auto">
-      <a className="flex mb-2 mt-6 font-light text-gray-400" href="/">
+    <div className="px-4 max-w-screen-xl mx-auto">
+      <a className="flex  mb-2 mt-6 font-light text-gray-400" href="/">
         <ChevronLeft /> Назад
       </a>
-      <h1 className="text-3xl font-semibold  mb-4">{film.name}</h1>
-      <div className="flex">
+      <h1 className="text-center md:text-left text-3xl font-semibold  mb-4">{film.name}</h1>
+      <div className="md:flex-row flex flex-col items-center">
         <img className="w-80 h-96 object-cover rounded" src={film.placeholder} alt="" />
-        <div className="flex flex-col gap-4 ml-10 items-start justify-center">
+        <div className="flex md:items-start items-center md:py-0 py-4 flex-col gap-4 ml-10 items-start justify-center">
           <p>Рейтинг: {film.imdb}</p>
           {/* <p>Год: {film.year}</p> */}
           <p>{film.description}</p>
