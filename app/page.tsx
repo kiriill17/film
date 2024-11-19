@@ -1,5 +1,6 @@
 'use client';
 
+import film from '../public/filmm.mp4';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Button } from '@/components/ui/button';
 
@@ -31,13 +32,7 @@ export default function Home() {
       {/* header */}
       <div className="h-96 relative w-full">
         <div className="h-96 flex bg-black opacity-50 ">
-          <video
-            className="w-full object-cover bg-black"
-            autoPlay
-            loop
-            muted
-            src={require('../public/filmm.mp4')}
-          />
+          <video className="w-full object-cover bg-black" autoPlay loop muted src={film} />
         </div>
         <div className="absolute w-full h-full flex flex-col px-16 justify-center top-0 left-0">
           <h1 className="text-4xl font-semibold text-center sm:text-left">Zetflix</h1>
