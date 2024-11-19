@@ -30,6 +30,7 @@ import {
 import { Button } from './ui/button';
 import { useSession, signOut, signIn } from 'next-auth/react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Skeleton } from '@/components/ui/skeleton';
 
 // Menu items.
 const items = [
@@ -57,7 +58,7 @@ const items = [
 
 export function AppSidebar() {
   const session = useSession();
-  console.log(session);
+
   return (
     <Sidebar>
       <SidebarHeader>
@@ -89,7 +90,7 @@ export function AppSidebar() {
       </SidebarContent>
       <SidebarFooter>
         <div className="px-2 py-2">
-          {!session.data ? (
+          {!session.data?.user?.name ? (
             <>
               <a href="/login">
                 <Button onClick={() => signIn()} className="mb-2 w-full" variant="outline">

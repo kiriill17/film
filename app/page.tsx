@@ -89,9 +89,11 @@ export default function Home() {
                       <p className="font-light text-sm">2024</p>
                       <p className="font-light text-sm">imdb: {obj.imdb}</p>
                       <div className="flex justify-between items-center mt-2 mb-1">
-                        <Button className="p-1 h-8 bg-black text-white border-2 hover:text-black">
-                          Смотреть
-                        </Button>
+                        <a href={`/film/${obj.id}`}>
+                          <Button className="p-1 h-8 bg-black text-white border-2 hover:text-black">
+                            Смотреть
+                          </Button>
+                        </a>
                         <a href="">
                           <Heart strokeWidth={1.25} width={20} />
                         </a>
