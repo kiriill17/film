@@ -66,10 +66,9 @@ export default function Home() {
           <CarouselContent>
             {!arrFilms.length ? (
               <>
-                <Skeleton className="w-[300px] h-[370px] ml-10 rounded-xl" />
-                {Array.from({ length: 9 }).map((_, index) => (
+                {Array.from({ length: 5 }).map((_, index) => (
                   <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/5">
-                    <Skeleton className="w-[300px] h-[370px] rounded-xl" />
+                    <Skeleton className="w-[270px] h-[370px] rounded-xl" />
                   </CarouselItem>
                 ))}
               </>
@@ -142,7 +141,7 @@ export default function Home() {
           </Carousel>
         </div>
         {/* cartoons */}
-        <div className="px-16 mb-4">
+        <div className=" mb-4">
           <h1 className="text-2xl font-semibold mb-4 mt-10">Мультфильмы</h1>
           <Carousel
             opts={{

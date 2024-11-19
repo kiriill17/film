@@ -36,7 +36,7 @@ import { Skeleton } from '@/components/ui/skeleton';
 const items = [
   {
     title: 'Фильмы',
-    url: '/films',
+    url: '/film',
     icon: Popcorn,
   },
   {

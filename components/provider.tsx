@@ -6,6 +6,7 @@ import { AppSidebar } from '@/components/app-sidebar';
 import { ThemeProvider } from '@/components/theme-provider';
 import { ModeToggle } from '@/components/modeToggle';
 import { Toaster } from '@/components/ui/toaster';
+import NextTopLoader from 'nextjs-toploader';
 
 export const Provider = ({ children }: any) => {
   return (
@@ -16,6 +17,7 @@ export const Provider = ({ children }: any) => {
           <main className="w-full">
             <SidebarTrigger />
             <ModeToggle />
+            <NextTopLoader />
             {children}
             <Toaster />
           </main>
