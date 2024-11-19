@@ -36,7 +36,7 @@ export default function Home() {
             autoPlay
             loop
             muted
-            src={require('../public/filmm.mp4')}
+            src={require('../public/filmm.mp4').default}
           />
         </div>
         <div className="absolute w-full h-full flex flex-col px-16 justify-center top-0 left-0">

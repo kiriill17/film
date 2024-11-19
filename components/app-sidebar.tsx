@@ -17,7 +17,6 @@ import {
 import { Button } from './ui/button';
 import { useSession, signOut, signIn } from 'next-auth/react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Skeleton } from '@/components/ui/skeleton';
 
 // Menu items.
 const items = [
