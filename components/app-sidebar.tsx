@@ -1,9 +1,12 @@
+'use client';
+
 import {
   Calendar,
   Drum,
   Film,
   Home,
   Inbox,
+  LogOut,
   Popcorn,
   Search,
   Settings,
@@ -25,6 +28,8 @@ import {
   SidebarMenuSubItem,
 } from '@/components/ui/sidebar';
 import { Button } from './ui/button';
+import { useSession, signOut, signIn } from 'next-auth/react';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 // Menu items.
 const items = [
@@ -51,6 +56,8 @@ const items = [
 ];
 
 export function AppSidebar() {
+  const session = useSession();
+  console.log(session);
   return (
     <Sidebar>
       <SidebarHeader>
@@ -82,16 +89,41 @@ export function AppSidebar() {
       </SidebarContent>
       <SidebarFooter>
         <div className="px-2 py-2">
-          <a href="/login">
-            <Button className="mb-2 w-full" variant="outline">
-              Войти
-            </Button>
-          </a>
-          <a href="/register">
-            <Button className="w-full" variant="outline">
-              Зарегистрироваться
-            </Button>
-          </a>
+          {!session.data ? (
+            <>
+              <a href="/login">
+                <Button onClick={() => signIn()} className="mb-2 w-full" variant="outline">
+                  Войти
+                </Button>
+              </a>
+              <a href="/register">
+                <Button className="w-full" variant="outline">
+                  Зарегистрироваться
+                </Button>
+              </a>
+            </>
+          ) : (
+            <>
+              <div className="flex items-center justify-between">
+                <div className="flex items-center">
+                  <Avatar>
+                    <AvatarImage src="https://github.com/shadcn.png" />
+                    <AvatarFallback>CN</AvatarFallback>
+                  </Avatar>
+
+                  <div className="ml-2 flex flex-col">
+                    <h1>{session.data?.user?.name}</h1>
+                    <p className="text-xs font-light">{session.data?.user?.email}</p>
+                  </div>
+                </div>
+
+                <LogOut
+                  onClick={() => signOut({ callbackUrl: '/' })}
+                  className="text-gray-500 transition cursor-pointer hover:text-amber-700"
+                />
+              </div>
+            </>
+          )}
         </div>
       </SidebarFooter>
     </Sidebar>
