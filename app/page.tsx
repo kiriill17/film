@@ -14,7 +14,6 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel';
 import { Heart } from 'lucide-react';
-import { prisma } from '@/prisma/prisma-client';
 
 export default function Home() {
   const [arrFilms, setArrFilms] = React.useState<any[]>([]);

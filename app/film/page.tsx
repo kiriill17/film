@@ -5,14 +5,11 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { Skeleton } from '@/components/ui/skeleton';
 import { ChevronDown, Heart } from 'lucide-react';
 import React from 'react';
-import { useEffect } from 'react';
 
 export default function Page() {
   const [arrFilms, setArrFilms] = React.useState<any[]>([]);
@@ -49,7 +46,7 @@ export default function Page() {
         ) : (
           <>
             {arrFilms.map((obj, index) => (
-              <div className="p-1 border-2 rounded-xl select-none sm:w-64 w-full">
+              <div key={index} className="p-1 border-2 rounded-xl select-none sm:w-64 w-full">
                 <img
                   src={obj.placeholder}
                   alt="#"

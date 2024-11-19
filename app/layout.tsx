@@ -1,11 +1,7 @@
 import type { Metadata } from 'next';
 import { Montserrat } from 'next/font/google';
 import './globals.css';
-import { SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar';
-import { AppSidebar } from '@/components/app-sidebar';
-import { ThemeProvider } from '@/components/theme-provider';
-import { ModeToggle } from '@/components/modeToggle';
-import { SessionProvider } from 'next-auth/react';
+
 import { Provider } from '@/components/provider';
 
 const montserrat_init = Montserrat({

@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import { ChevronLeft, Heart, UndoDot } from 'lucide-react';
+import { ChevronLeft, Heart } from 'lucide-react';
 import { prisma } from '@/prisma/prisma-client';
 
 export default async function Film({ params }: { params: { id: string } }) {

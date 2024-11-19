@@ -8,7 +8,7 @@ import { ModeToggle } from '@/components/modeToggle';
 import { Toaster } from '@/components/ui/toaster';
 import NextTopLoader from 'nextjs-toploader';
 
-export const Provider = ({ children }: any) => {
+export const Provider = ({ children }: { children: React.ReactNode }) => {
   return (
     <SessionProvider>
       <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
